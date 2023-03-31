@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script async src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script async src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
         body {
             background-color: #f5f5f5;
@@ -87,7 +89,8 @@
                 </div>
             </div>
         </div>
-        <div class="alert alert-info">
+        <div class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             <ol>
                 <li>按 <kbd>~</kbd> 键打开控制台，按 <kbd>Esc</kbd> 退出控制台</li>
                 <li>生成物品指令：
