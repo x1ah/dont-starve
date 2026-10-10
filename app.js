@@ -268,7 +268,12 @@ document.addEventListener('error',event => {
 },true);
 document.addEventListener('click',event => {
   const button = event.target.closest('button');
-  if (!button || button.disabled) return;
+  if (!button) {
+    const card = event.target.closest('.item-card[data-item]');
+    if (card && !event.target.closest('a,input,select,textarea') && window.getSelection()?.isCollapsed !== false) openDetail(card.dataset.item);
+    return;
+  }
+  if (button.disabled) return;
   if (button.dataset.category) { state.category=button.dataset.category; state.page=1; renderCategories(); renderItems(); }
   else if (button.dataset.mode) { state.mode=button.dataset.mode; document.querySelectorAll('[data-mode]').forEach(element => element.setAttribute('aria-pressed',element.dataset.mode===state.mode)); renderItems(); }
   else if (button.dataset.favorite) { const id=button.dataset.favorite; state.favorites.has(id) ? state.favorites.delete(id) : state.favorites.add(id); savePreference('ds-favorites',JSON.stringify([...state.favorites])); renderCategories(); renderItems(); }
