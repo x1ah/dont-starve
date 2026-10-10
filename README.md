@@ -4,7 +4,7 @@
 
 **[在线使用 →](https://when.run/dont-starve/)**
 
-![首页预览](assets/homepage-preview.jpg)
+![首页预览](assets/homepage-preview.png)
 
 ## 功能
 
